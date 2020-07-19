@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const Student = new Schema ({
     name: String,
+    password: String,
     idNumber: String,
     gradeLevel: String,
     email: String,
@@ -10,3 +11,5 @@ const Student = new Schema ({
     guardianName: String,
     internetConnection: String
 })
+const StudentSchema  = mongoose.model("Student",Student);
+module.exports = StudentSchema;

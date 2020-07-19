@@ -6,7 +6,10 @@ import Styles from "./login-page.module.scss";
 import Logo from "../../Assets/logo.png";
 
 const LoginPage = () => {
-    const [input, setInput] = useState({})
+    const [input, setInput] = useState({
+      userId: "",
+      password: ""
+    })
 
     const onInput = (e) =>{
         e.preventDefault()
@@ -25,7 +28,7 @@ const LoginPage = () => {
         </div>
       </div>
       <div className={Styles.row2}>
-        <form className={Styles.form}>
+        <form autoComplete="off" className={Styles.form}>
           <div className={Styles.logoContainer}>
             <img
               src={Logo}
@@ -36,7 +39,7 @@ const LoginPage = () => {
           <div className={Styles.formBody}>
                 <div className={Styles.formRow}>
                     <label htmlFor="userId" className={Styles.label}>User Id</label>
-                    <input value={input.userId} onChange={onInput} name="userId" type="text" className={Styles.input}/>
+                    <input value={input.userId} autoComplete="off" onChange={onInput} name="userId" type="text" className={Styles.input}/>
                 </div>
                 <div className={Styles.formRow}>
                     <label htmlFor="password" className={Styles.label}>Password</label>
@@ -46,9 +49,9 @@ const LoginPage = () => {
           </div>
           <div className={Styles.formBtnContainer}>
               <Link to="/enrollment">
-                <button className={Styles.enrollmentBtn}>Enrollment</button>
+                <button type="button" className={Styles.enrollmentBtn}>Enrollment</button>
               </Link>
-              <button className={Styles.submitBtn}>Login</button>
+              <button type="submit" className={Styles.submitBtn}>Login</button>
           </div>
         </form>
       </div>

@@ -1,10 +1,10 @@
 import React, {useState} from "react"
 import Styles from "./enrollment-page.module.scss"
 
-//IMAGES
-// import Logo from "../../Assets/logo.png"
+
 //COMPONENTS
 import EnrollmentCodeForm from "../../Components/Enrollment-code-form/enrollment-code-form.component"
+import EnrollmentForm from "../../Components/Enrollment-form/enrollment-form.component"
 const EnrollmentPage = () =>{
     const [confirmationStatus, setConfirmationStatus] = useState(false)
     
@@ -13,7 +13,8 @@ const EnrollmentPage = () =>{
    
     return(
         <div className={Styles.screen}>
-           {(confirmationStatus) ? null : <EnrollmentCodeForm setConfirmationStatus={setConfirmationStatus} />}
+           {/* {(confirmationStatus) ? <EnrollmentForm /> : <EnrollmentCodeForm setConfirmationStatus={setConfirmationStatus} />} */}
+           <EnrollmentForm />
         </div>
     )
 }
