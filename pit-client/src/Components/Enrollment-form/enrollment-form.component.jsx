@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {useHistory} from "react-router-dom"
 import Styles from "./enrollment-form.module.scss";
 
 //IMAGES
@@ -6,6 +7,7 @@ import Illustration from "../../Assets/enrollment-illustration.svg";
 
 const endpoint = "http://localhost:5000/enrollmentForm/submitEnrollmentForm"
 const EnrollmentForm = () =>{
+    const history = useHistory();
     const [inputs, setInputs] = useState({
         name: "",
         idNumber: "",
@@ -47,8 +49,16 @@ const EnrollmentForm = () =>{
             body: JSON.stringify(inputs)
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if (data === "Successful"){
+                console.log("success")
+                history.push("/home")
+            }else{
+                alert("not successful")
+            }
+        })
     }
+    
     return(
         <div className={Styles.container}>
             <div className={Styles.left}>

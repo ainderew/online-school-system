@@ -13,8 +13,8 @@ const EnrollmentPage = () =>{
    
     return(
         <div className={Styles.screen}>
-           {/* {(confirmationStatus) ? <EnrollmentForm /> : <EnrollmentCodeForm setConfirmationStatus={setConfirmationStatus} />} */}
-           <EnrollmentForm />
+           {(confirmationStatus) ? <EnrollmentForm /> : <EnrollmentCodeForm setConfirmationStatus={setConfirmationStatus} />}
+           {/* <EnrollmentForm /> */}
         </div>
     )
 }
