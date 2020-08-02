@@ -5,11 +5,15 @@ const Student = new Schema ({
     name: String,
     password: String,
     idNumber: String,
-    gradeLevel: String,
+    yearLevel: String,
     email: String,
     messengerName: String,
     guardianName: String,
-    internetConnection: String
+    internetConnection: String,
+    phoneNumber: String,
+    guardianPhoneNumber: String,
+    grades: [Object],
+    schedule: Object
 })
 const StudentSchema  = mongoose.model("Student",Student);
 module.exports = StudentSchema;

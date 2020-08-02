@@ -27,8 +27,11 @@ app.get("/" , (req,res) =>{
 
 
 //ROUTES
-const enrollmentForm = require("./routes/enrollment-form.route")
+const enrollmentFormRoute = require("./routes/enrollment-form.route")
+const loginRoute = require("./routes/login.route");
+const adminRoute = require("./routes/admin.route");
 
-app.use("/enrollmentForm", enrollmentForm)
-
+app.use("/enrollmentForm", enrollmentFormRoute)
+app.use("/login", loginRoute)
+app.use("/admin", adminRoute);
 
