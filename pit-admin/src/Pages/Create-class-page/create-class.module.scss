@@ -1,0 +1,73 @@
+@import "../../scss_variables/colors";
+.screen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: $background-color;
+}
+
+.inner{
+    width: 80vw;
+    height: calc(100vh - 5rem);
+    
+    display: grid;
+    grid-template-columns: 13rem 1fr;
+    position: relative;
+   
+}
+
+.rightCol{
+    grid-column: 2/3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 0 2rem;
+    
+    // overflow-y: scroll;
+    // border: 1px solid red;
+    .search{
+        width: 100%;
+        min-height: 10rem;
+        margin-top: 3rem;
+        background: #fff;
+        -webkit-box-shadow: $box-shadow;
+        -moz-box-shadow: $box-shadow;
+        box-shadow: $box-shadow;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .searchForm{
+        display: flex;
+        align-items: flex-end ;
+    }
+    .searchInput{
+        width: 20rem;
+        margin-right: 1rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px){
+    .inner{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    .rightCol{
+        grid-column: 1/2;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        // border: 1px solid red;
+    }
+}

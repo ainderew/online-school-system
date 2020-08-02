@@ -1,0 +1,121 @@
+.dashboard{
+    width: 13rem;
+    height: calc(100vh - 5rem);
+    position: fixed;
+    border-right: 1px solid #DFDFDF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.inner{
+    width: 90%;
+    height: 80%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // border: 1px solid red;
+}
+
+.row1{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    // justify-content: space-evenly;
+    .studentImg{
+        width: 160px;
+        height: 150px;
+        border: 3px solid #ffff;
+    }
+    
+    .name{
+        font-size: .9rem;
+        margin-top: 1rem;
+    }
+}
+.row1::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid #DFDFDF;
+}
+
+.row2{
+    height: 25%;
+    width: 100%;
+    padding: 0 .5rem;
+    margin-top: 1rem;
+    .ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    a{
+        text-decoration: none;
+    }
+    .li{
+        list-style-type: none;
+        color: #000;
+    }
+}
+
+.row3{
+    height: 35%;
+    width: 100%;
+    background: #fff;
+    border: 2px solid #DFDFDF;
+    margin-top: 2rem;
+    
+    .ul2{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .li2{
+        flex: 1;
+        list-style-type: none;
+    }
+    
+    .contactContainer,
+    .contactContainer2{ //2 so the last contgainer does not have an underline
+        padding: .5rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    .contactContainer::before{
+        content: "";
+        width: 90%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 2px solid #DFDFDF;
+    }
+    
+    .email{
+        font-size: .7rem;
+    }
+    .infoP{
+        font-size: .7rem;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .dashboard{
+        display: none;
+    }
+}

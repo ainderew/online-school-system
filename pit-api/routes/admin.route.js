@@ -57,7 +57,8 @@ router.post("/createProspectus", (req, res) => {
   console.log("createprospectus hit")
   const{
     courseName,
-    subjects
+    subjects,
+    gender
   } = req.body;
   
   console.log(req.body)
@@ -66,6 +67,7 @@ router.post("/createProspectus", (req, res) => {
     const prospectus = new ProspectusSchema({
       courseName: courseName,
       subjects: subjects,
+      gender: gender,
       totalUnits: ""
     })
     prospectus.save();

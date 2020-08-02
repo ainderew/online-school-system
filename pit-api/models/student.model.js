@@ -13,7 +13,8 @@ const Student = new Schema ({
     phoneNumber: String,
     guardianPhoneNumber: String,
     grades: [Object],
-    schedule: Object
+    // schedule: Object
+    gender: String
 })
 const StudentSchema  = mongoose.model("Student",Student);
 module.exports = StudentSchema;

@@ -1,9 +1,10 @@
 import React, {useState, useRef} from "react"
 import Styles from "./enrollment-code-form.module.scss";
+import {enrollmentCodeEndpoint} from "../../utilities/vars";
 //IMAGES
 import Logo from "../../Assets/logo.png"
 
-const endpoint = "http://localhost:5000/enrollmentForm/"
+
 const EnrollmentCodeForm = ({setConfirmationStatus}) =>{
     let codeInput = useRef(null)
     const [enrollmentCode, setEnrollmentCode] = useState("")
@@ -18,7 +19,7 @@ const EnrollmentCodeForm = ({setConfirmationStatus}) =>{
         const obj ={
             enrollmentCode: enrollmentCode
         }
-        await fetch (endpoint,{
+        await fetch (enrollmentCodeEndpoint,{
             method: "POST",
             mode: "cors",
             headers:{

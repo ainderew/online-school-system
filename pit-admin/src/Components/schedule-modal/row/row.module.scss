@@ -1,0 +1,20 @@
+@import "../../../scss_variables/colors";
+.row{
+    display: grid;
+    grid-template-rows: repeat(29, 2rem);
+    overflow: visible;
+    grid-template-columns: 10rem;    
+    background: white;
+}
+.cel{
+    border: 1px solid black;
+}
+.active{
+    background: yellow;
+}
+.dayCel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $green;
+}

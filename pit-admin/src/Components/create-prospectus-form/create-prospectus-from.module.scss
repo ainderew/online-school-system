@@ -1,0 +1,93 @@
+@import "../../scss_variables/colors";
+
+
+
+//COMMON STYELS----------------------------------------------------------
+.input{
+  margin-right: 1rem;  
+  
+}
+.codeInput{
+    margin-right: 1rem;
+    width: 50%;
+}
+
+.addBtn{
+    width: 50%;
+}
+
+//-----------------------------------------------------------------------
+.form{
+    width: 100%;
+    background: #fff;
+    box-shadow: $box-shadow;
+    padding: 1rem;
+    
+    .semesterLabel{
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .row{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        // border-bottom: 1px solid grey
+        background:#f8f8f8f8;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    .inputContainer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+}
+
+
+.labelDiv{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 1rem;
+    // padding: .5rem 1rem;
+    
+    .rowLabel{
+        font-size: 1rem;
+    }
+}
+
+//WHEN SUBJECT IS ADDED TO THE LIST-----------------------------------------------------------------
+.subjectContainer{
+  
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid rgb(212, 212, 212);
+    // padding: .5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .subject{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    
+    .deleteContainer{
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .deleteSubject{
+        background: rgb(228, 97, 97);
+        color: #fff;
+        padding: .1rem 1rem;
+        font-size: .9rem;
+    }
+}
+.subjectContainer:hover>.deleteContainer{
+    display: flex;
+}
+
+//-------------------------------------------------------------------------------------------------

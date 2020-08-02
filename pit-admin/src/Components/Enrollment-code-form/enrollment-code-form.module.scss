@@ -1,0 +1,63 @@
+@import "../../scss_variables/colors";
+
+
+.enrollmentCode{
+    width: 30%;
+    height: 50vh;
+    background: #fff;
+
+    box-shadow:  5px 5px 18px #e2e2e8, 
+             -5px -5px 18px #ffffff;
+
+    display: grid;
+    grid-template-rows: 5rem calc(50vh -10rem) 5rem;
+    border-radius: 1rem;
+}
+
+.logoContainer{
+    height: 5rem;
+    // border: 1px solid black;
+    position: relative;
+
+    .logo{
+        width: 7rem;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.formBody{
+    .codeFormRow{
+        display: flex;
+        flex-direction: column;
+        padding: 0 3rem;
+    }
+    
+}
+.input{
+    background: #ffffff;
+        box-shadow: inset 5px 5px 10px #dfdede;
+        border: none;
+        height: 1.7rem;
+        outline: none;
+        border-radius: .3rem;
+}
+
+.btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enrollmentBtn{
+    width: 10rem;
+    height: 2.3rem;
+    color: #fff;
+    font-weight: 700;
+    background: black;
+    border: 2px solid black;
+    border: none;
+    
+}

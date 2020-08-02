@@ -1,6 +1,11 @@
 export const userDataAction = (userData) =>{
     return{
-        type: "getUserData",
+        type: "storeUserData",
         userData: userData
+    }
+}
+export const clearDataAction = (userData) =>{
+    return{
+        type: "clearUserData"
     }
 }

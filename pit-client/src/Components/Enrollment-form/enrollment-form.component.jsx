@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom"
 import Styles from "./enrollment-form.module.scss";
-
+import {enrollmentEndpoint} from "../../utilities/vars"
 //IMAGES
 import Illustration from "../../Assets/enrollment-illustration.svg";
 
-const endpoint = "http://localhost:5000/enrollmentForm/submitEnrollmentForm"
+
 const EnrollmentForm = () =>{
     const history = useHistory();
     const [inputs, setInputs] = useState({
@@ -15,7 +15,10 @@ const EnrollmentForm = () =>{
         messengerName: "",
         yearLevel: "",
         guardianName: "",
-        internetConnection: ""
+        internetConnection: "",
+        phoneNumber: "",
+        guardianPhoneNumber: "",
+        gender: ""
     })
     
     const onInput = (e) =>{
@@ -34,13 +37,16 @@ const EnrollmentForm = () =>{
             messengerName: "",
             yearLevel: "",
             guardianName: "",
-            internetConnection: ""
+            internetConnection: "",
+            phoneNumber: "",
+            guardianPhoneNumber: "",
+            gender: ""
         })
     }
     
     const submit = (e) =>{
         e.preventDefault();
-        fetch(endpoint, {
+        fetch(enrollmentEndpoint, {
             method: "POST",
             mode: "cors",
             headers:{
@@ -54,7 +60,8 @@ const EnrollmentForm = () =>{
                 console.log("success")
                 history.push("/home")
             }else{
-                alert("not successful")
+                alert(data)
+                console.log(data)
             }
         })
     }
@@ -87,10 +94,29 @@ const EnrollmentForm = () =>{
                 </div>
                 <div className={Styles.row}>
                     <div className={Styles.inputContainer}>
+                        <label htmlFor="email" className={Styles.label}>Phone Number</label>
+                        <input value={inputs.phoneNumber} name="phoneNumber" onChange={onInput} type="text" className={Styles.nameInput}/>
+                    </div>
+                    <div className={Styles.inputContainer}>
+                        <label htmlFor="messengerName" className={Styles.label}>Guardian's Phone Number</label>
+                        <input value={inputs.guardianPhoneNumber} name="guardianPhoneNumber" onChange={onInput} type="text" className={Styles.nameInput}/>
+                    </div>
+                </div>
+                <div className={Styles.row}>
+                    <div className={Styles.inputContainer}>
                         <label htmlFor="yearLevel" className={Styles.label}>Grade Level</label>
-                        <select value={inputs.yearLevel} name="yearLevel" onChange={onInput} type="text" className={Styles.nameInput}>
-                            <option value="Grade 11">SHS Grade 11</option>
-                            <option value="Grade 12">SHS Grade 12</option>
+                        <select value={inputs.yearLevel} name="yearLevel" onChange={onInput} className={Styles.nameInput}>
+                            <option value=""></option>
+                            <option value="Grade11">SHS Grade 11</option>
+                            <option value="Grade12">SHS Grade 12</option>
+                        </ select>
+                    </div>
+                    <div className={Styles.inputContainer}>
+                        <label htmlFor="gender" className={Styles.label}>Gender</label>
+                        <select value={inputs.gender} name="gender" placeholder="Gender will affect schedule" onChange={onInput} className={Styles.nameInput}>
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </ select>
                     </div>
                 </div>

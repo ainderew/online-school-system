@@ -1,29 +1,51 @@
-import {useState, useEffect} from "react"
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { userDataAction } from "../redux_actions";
+import { useHistory } from "react-router-dom";
 
-const useFetch = () =>{
-    const [data, setData] = useState()
+const useLoginFetch = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [data, setData] = useState({
+    status: null,
+    counter: ""
+  });
 
-    const fetcher =  (endpoint,dataObj,e) =>{
-        e.preventDefault();
-        fetch (endpoint,{
-        method: "POST",
-        mode: "cors",
-        headers:{
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dataObj)
-        })
-        .then(response => response.json())
-        .then(parsedResponse =>{
-            setData(parsedResponse)
-        })
-       
-    }
 
-    return {
-        fetcher,
-        data
-    }
-}
+  const loginFetch = (loginEndpoint, obj) => {
+    fetch(loginEndpoint, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          //successs
+          dispatch(userDataAction(data.data));
+          history.push("/home");
+        } else if (data.status === "id number failed") {
+          //wrong id number
+          setData({
+            status: data.status,
+            counter: Math.random()
+          });
+        } else if (data.status === "failed") {
+          //wrong password
+          setData({
+            status: data.status,
+            counter: Math.random()
+          });
+        }
+      });
+  };
+  return {
+    loginFetch,
+    data,
+  };
+};
 
-export default useFetch
+export default useLoginFetch;

@@ -53,15 +53,16 @@ router.post("/submitEnrollmentForm", async (req,res) => {
   fillSchedule(combinedSchedule)
   // console.log(combinedSchedule)
 
-  const {name,idNumber,yearLevel,email,messengerName,guardianName,internetConnection,phoneNumber,guardianPhoneNumber} = req.body;
-  const studentProspectus = await prospectusSchema.findOne({courseName: yearLevel})
-  const {subjects} = studentProspectus
+  const {name,idNumber,yearLevel,email,messengerName,guardianName,internetConnection,phoneNumber,guardianPhoneNumber,gender} = req.body;
+  
+  const studentProspectus = await prospectusSchema.findOne({courseName: yearLevel, gender: gender})  //FINDS PROSPECTUS ACCORDING TO YEAR LEVEL AND GENDER
+  const {subjects} = studentProspectus 
+  
   try{
     //CREATES A GRADE SCHEMA FOR EVERY SUBJECT ON THE FIRST SEMESTER
     //it creates an object with 
     subjects.firstSemester.forEach(async el =>{
       const uniqueId = mongoose.Types.ObjectId()
-      
       const Subject = {
         subjectName: el.subjectName,
         idNumber: idNumber,
@@ -88,66 +89,9 @@ router.post("/submitEnrollmentForm", async (req,res) => {
       
       //PUSH STUDENT TO THE SUBJECT'S STUDENT LIST WITH THE UNIQUE GRADE ID
       await subjectSchema.updateOne({subjectName: el.subjectName}, {$push: {students: student}})
-      
-      const subject = await subjectSchema.findOne({subjectName: el.subjectName})
-     
-      const {schedule} = subject
-      if (el.subjectName === "English (Oral Communication)"){
-        console.log(`English (Oral Communication): ${schedule[0].Monday.forEach(el => console.log(el))}`)
-        
-      }
-     
-      
-      // for (let i = 0; i < 7; i++){
-      //   if (i === 0){
-      //     schedule.Monday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Monday.splice(index,1,el)
-      //       }
-      //     })
-      //   }else if (i === 1){
-      //     schedule.Tuesday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Tuesday.splice(index,1,el)
-      //       }
-      //     })
-      //   }else if (i === 2){
-      //     schedule.Wednesday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Wednesday.splice(index,1,el)
-      //       }
-      //     })
-      //   }else if (i === 3){
-      //     schedule.Thursday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Thursday.splice(index,1,el)
-      //       }
-      //     })
-      //   }else if (i === 4){
-      //     schedule.Friday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Friday.splice(index,1,el)
-      //       }
-      //     })
-      //   }else if (i === 5){
-      //     schedule.Saturday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Saturday.splice(index,1,el)
-      //       }
-      //     })
-      //   }else if (i === 6){
-      //     schedule.Sunday.forEach(( el, index) =>{
-      //       if (el.state === true){
-      //         combinedSchedule.Sunday.splice(index,1,el)
-      //       }
-      //     })
-      //   }
-      // }
-      
-      
+
     })
-    // console.log(combinedSchedule)
-    
+ 
      // await userModel.updateOne({ userId: id.toString()}, {$push: {messages:{name: name, message:sentMessage}}})
     
     
