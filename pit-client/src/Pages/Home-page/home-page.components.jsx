@@ -20,13 +20,23 @@ const HomePage = () =>{
     
     //FUNCTIONS
     const scheduleChecker = () =>{
-            switch (gender && yearLevel){
-                case "male" && "Grade11":
-                    console.log("male grade11")
-                    break;
-                default:
-                    break;
-            }
+           
+              if (gender === "Male" && yearLevel === "Grade11"){
+                setSchedule(Grade11Batch1)
+                console.log("male grade11")
+              } else if (gender ==="Female" && yearLevel === "Grade11"){
+                    setSchedule(Grade11Batch2)
+                    console.log("female grade11")
+              } else if (gender === "Male" && yearLevel === "Grade12"){
+                    setSchedule(Grade12Batch1)
+                    console.log("female grade12")
+              }else {
+                    setSchedule(Grade12Batch2)
+                    console.log("female grade12")
+              }
+                    
+
+              
     }
     
     useEffect(() => {
@@ -42,6 +52,7 @@ const HomePage = () =>{
         }
         
         scheduleChecker()
+        console.log(gender)
         
     }, []);
     
@@ -59,7 +70,7 @@ const HomePage = () =>{
                     </div>
                     <div className={Styles.ScheduleContainer}>
                         <img src={schedule} alt="Schedule" className={Styles.scheduleImg} />
-                        <a href={Grade12Batch1} className={Styles.downloadBtn} download="Schedule">Download Schedule</a>
+                        <a href={schedule} className={Styles.downloadBtn} download="Schedule">Download Schedule</a>
                     </div>
                 </div>
             </div>

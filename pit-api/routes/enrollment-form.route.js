@@ -108,6 +108,7 @@ router.post("/submitEnrollmentForm", async (req,res) => {
       phoneNumber: phoneNumber,
       guardianPhoneNumber: guardianPhoneNumber,
       grades: [gradeObj],
+      gender: gender
     })
     Student.save();
     

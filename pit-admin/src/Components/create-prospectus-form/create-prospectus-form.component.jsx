@@ -73,7 +73,7 @@ const CreateProspectus = ({courseDetails}) => {
     const onCreate = (e) =>{
         e.preventDefault();
         const obj = {
-            courseName: courseDetails.name,
+            courseName: courseDetails.course,
             gender: courseDetails.gender,
             subjects: {
                 firstSemester: firstSemester,
