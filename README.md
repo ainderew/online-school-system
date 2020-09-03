@@ -6,7 +6,7 @@ I wanted to help my highschool alma mater and alleviate some of the their tasks.
 
 
 <p align="center">
-<img align="center" width="400px" height="300px" src="https://media.giphy.com/media/FPbnShq1h1IS5FQyPD/giphy.gif" />
+<img align="center" width="50%" src="https://user-images.githubusercontent.com/61579578/92138732-5a179000-ee41-11ea-8ea5-5e93a4954a92.PNG" />
 </p>
 
 ## What Is It?
