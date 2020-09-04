@@ -22,7 +22,7 @@ I wanted to help my highschool alma mater and alleviate some of the their tasks.
   
 1. An enrollment "code" is set to keep unwanted users from accessing the enrollment form.
 2. Students then fill out a form regarding the enrollment.
-3. Data is processed by NodeJS Assigning students to their classes based on their year level.
+3. Data is processed in NodeJS Assigning students to their classes based on their year level.
 
 </details>
 
@@ -32,6 +32,7 @@ I wanted to help my highschool alma mater and alleviate some of the their tasks.
  - An admin can set a prosepectus that the back-end will use as a reference to assign students based on their year level
  - An admin can create subjects, set schedule and assign teachers to that subject.
      - Subjects are initially empty but will automaticallly be filled according the the set limit when students are enrolled.
+ - An admin can delete classes
 </details>
 
 ## To Add Features
@@ -49,9 +50,10 @@ Send me a message andrewapinon@gmail.com
 
 ## Technical Details
 #### Tech stack used
-- React  <img align="right" width="20px" src="https://img.icons8.com/nolan/64/react-native.png"/> <br/>
+- React JS  <img align="right" width="20px" src="https://img.icons8.com/nolan/64/react-native.png"/> <br/>
 - MongoDB <img align="right" width="20px" src="https://img.icons8.com/color/48/000000/mongodb.png"/> <br/>
 - NodeJS <img align="right" width="20px" src="https://img.icons8.com/color/48/000000/nodejs.png"/> <br/>
 - Express
+- Bcrypt
 
 
