@@ -19,12 +19,27 @@ I wanted to help my highschool alma mater and alleviate some of the their tasks.
 
 ## How It Works
 <details><summary><b>Enrollment</b></summary>
+  
 1. An enrollment "code" is set to keep unwanted users from accessing the enrollment form.
 2. Students then fill out a form regarding the enrollment.
 3. Data is processed by NodeJS Assigning students to their classes based on their year level.
+
 </details>
 
+<details><summary><b>Set Up</b></summary>
+  
+ - An admin account can login from the admin page
+ - An admin can set a prosepectus that the back-end will use as a reference to assign students based on their year level
+ - An admin can create subjects, set schedule and assign teachers to that subject.
+     - Subjects are initially empty but will automaticallly be filled according the the set limit when students are enrolled.
+</details>
 
+## To Add Features
+- <details><summary>Automation of schedule plotting </summary>
+  A system where it collects a students schedule and visually displays it in their account
+  </details>
+I'm open and happy to hear any suggestions or constructive criticism. 
+Send me a message andrewapinon@gmail.com
 
 ## Technical Details
 #### Tech stack used
