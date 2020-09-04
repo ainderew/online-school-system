@@ -35,10 +35,16 @@ I wanted to help my highschool alma mater and alleviate some of the their tasks.
 </details>
 
 ## To Add Features
-- <details><summary>Automation of schedule plotting </summary>
-  A system where it collects a students schedule and visually displays it in their account
+Open for contribution ✅
+<details><summary>Automation of schedule plotting </summary>
+        A system where it collects a students schedule and visually displays it in their account
   </details>
-I'm open and happy to hear any suggestions or constructive criticism. 
+  
+ <details><summary>Checking for conflicting subject schedules</summary>
+          checks and notifies admin if there are any schedule overlaping for subjects
+  </details>
+  
+I'm happy and open to hear any suggestions or constructive criticism. </br>
 Send me a message andrewapinon@gmail.com
 
 ## Technical Details
