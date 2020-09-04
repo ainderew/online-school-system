@@ -18,9 +18,11 @@ I wanted to help my highschool alma mater and alleviate some of the their tasks.
 - Automate enrollment.
 
 ## How It Works
-#### Enrollment
+<details><summary><b>Enrollment</b></summary>
 1. An enrollment "code" is set to keep unwanted users from accessing the enrollment form.
-2. 
+2. Students then fill out a form regarding the enrollment.
+3. Data is processed by NodeJS Assigning students to their classes based on their year level.
+</details>
 
 
 
